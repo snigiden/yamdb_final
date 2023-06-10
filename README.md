@@ -1,5 +1,5 @@
 # Проект «Учебное развёртывание контейнера» 
-![Github actions](https://github.com/snigiden/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![Github actions](https://github.com/snigiden/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
 ___
 ## Используемые технологии:
 - Python,
