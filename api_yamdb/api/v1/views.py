@@ -121,8 +121,7 @@ class TitlesViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(self):
         if self.request.method == 'GET':
-            serializer_class = ReadTitleSerializer
-            return serializer_class
+            return ReadTitleSerializer
         return TitleSerializer
 
 
@@ -137,8 +136,7 @@ class ReviewsViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         title_id = get_object_or_404(Title, id=self.kwargs.get('title_id'))
-        queryset = Review.objects.filter(title=title_id)
-        return queryset
+        return Review.objects.filter(title=title_id)
 
     def perform_create(self, serializer):
         title = get_object_or_404(Title, id=self.kwargs.get('title_id'))
@@ -159,8 +157,7 @@ class CommentsViewSet(viewsets.ModelViewSet):
             id=self.kwargs.get('review_id'),
             title_id=self.kwargs.get('title_id'),
         )
-        queryset = review.comments.all()
-        return queryset
+        return review.comments.all()
 
     def perform_create(self, serializer):
         review = get_object_or_404(
